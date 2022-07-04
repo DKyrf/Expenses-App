@@ -30,7 +30,7 @@ function ExpenceForm(props){
        }else if(checker === "date"){
         return {
           ...prev,
-          date: new Date(event.target.value.split("-").join(", ")),
+          date: event.target.value,
         }
        }
   })
@@ -38,15 +38,21 @@ function ExpenceForm(props){
 
     function submitHandler(el){
       el.preventDefault(); 
-      props.submitted(inputVal)
 
-      console.log(inputVal.title);
+      const expenceData = {
+        title: inputVal.title,
+        amount: inputVal.amount,
+        date: new Date(inputVal.date),
+      };
+
+      props.onSendSubmittedData(expenceData);
+
       setInputVal({
-        title: "",
+        title:"",
         amount: "",
-        date: "",
+        date: ""
       })
-      console.log(inputVal.title);
+
 
 
     }

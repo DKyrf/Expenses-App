@@ -11,10 +11,9 @@ import NewExpence from "../NewExpence/NewExpence";
 function Expence(props){
 
 
-
     return (<div >
         <NewExpence 
-          newEntry = {props.entryData}
+          onSavedData = {props.newEntryData}
         />
         <Card className="expance__wrapper">
          { props.items.map((el, ind) => {

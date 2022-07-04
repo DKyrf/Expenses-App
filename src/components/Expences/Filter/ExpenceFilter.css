@@ -1,0 +1,25 @@
+.expence-filter__wrapper{
+    padding:  0 1rem;
+    color: white;
+    width: 100%;
+}
+.expence-filter__controlls{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0;
+
+}
+
+.expence-filter__controlls label{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.expence-filter__controlls select{
+    font: inherit;
+    padding: 0.5rem 3rem;
+    font-weight: bold;
+    border-radius: 6px;
+}
+  

@@ -46,7 +46,7 @@ console.log(exp);
         <div>
             <Expence 
             items={exp.sort((a, b) => b.date - a.date)}
-            entryData={getValue}
+            newEntryData={getValue}
 
             />
         </div>
