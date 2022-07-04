@@ -11,7 +11,6 @@ function NewExpence(props){
         <div className="new-expence">
             <ExpenceForm 
               submitted = {props.newEntry}
-
             />
         </div>
     )

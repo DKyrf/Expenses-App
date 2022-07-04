@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "../UI/Card"
 import ExpenceDate from "./ExpenceDate";
 
@@ -7,6 +7,7 @@ import "./ExpenceItem.css"
 
 
 function ExpenceItem(props){
+
     return (
         <Card className="expence__wrapper">
             <ExpenceDate date={props.date}/>

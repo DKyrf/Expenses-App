@@ -4,8 +4,8 @@ import "./ExpenceForm.css"
 function ExpenceForm(props){
 
   const [inputVal, setInputVal] = useState({
-    id: '',
-    title: '',
+    id: "",
+    title: "",
     amount: "",
     date: "",
 
@@ -36,14 +36,29 @@ function ExpenceForm(props){
   })
   }
 
+    function submitHandler(el){
+      el.preventDefault(); 
+      props.submitted(inputVal)
+
+      console.log(inputVal.title);
+      setInputVal({
+        title: "",
+        amount: "",
+        date: "",
+      })
+      console.log(inputVal.title);
+
+
+    }
 
 
     return (
-        <form onSubmit={(el) => {el.preventDefault(); props.submitted(inputVal)}}>
+        <form onSubmit={submitHandler}>
           <div className="new-expence">
             <div className="expence-description">
               <label>Title:</label>
               <input 
+              value={inputVal.title}
               name="title"
               type="text"
               onChange={handleChanges} 
@@ -53,6 +68,7 @@ function ExpenceForm(props){
             <div className="expence-description">
               <label>Amount:</label>
               <input 
+              value={inputVal.amount}
               name="amount"
               type="number" 
               min="0.01" 
@@ -64,6 +80,7 @@ function ExpenceForm(props){
             <div className="expence-description">
               <label>Date:</label>
               <input
+              value={inputVal.date}
               name="date"
               type="date" 
               min="2020" 
