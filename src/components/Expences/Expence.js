@@ -1,29 +1,43 @@
-import React from "react";
-import Card from "../UI/Card"
-import ExpenceItem from "./ExpenceItem";
-
+import React, {useState} from "react";
 import "./Expence.css"
+import Card from "../UI/Card"
+
 import NewExpence from "../NewExpence/NewExpence";
+import { ExpenceFilter } from "./Filter/ExpenceFilter";
+import { ExpencesList } from "./ExpencesList";
 
 
 
 
 function Expence(props){
 
+  const [year, setfilteredYear] = useState("2022")
+
+
+  function filteredYear(year){
+      setfilteredYear(year);
+  }
+
+  const filteredExpences = props.items.filter(el => (
+    new Date(el.date).getFullYear().toString() === year))
+
 
     return (<div >
+
         <NewExpence 
           onSavedData = {props.newEntryData}
         />
         <Card className="expance__wrapper">
-         { props.items.map((el, ind) => {
-          return <ExpenceItem 
-            key={ind}
-            title={el.title}
-            amount={el.amount}
-            date={el.date}
-          />
-         })}
+
+        <ExpenceFilter 
+          onChangeFilter={filteredYear}
+          selected={year}
+        />
+
+        <ExpencesList 
+          items={filteredExpences}
+        />
+
         </Card>
 
     </div>
