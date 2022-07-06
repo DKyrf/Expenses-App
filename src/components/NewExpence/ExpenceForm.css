@@ -2,8 +2,20 @@
 display: flex;
 flex-wrap: wrap;
 gap: 1rem;
-text-align: left;
-margin-bottom: 1rem;
+text-align: center;
+margin: 2rem auto;
+width: 50rem;
+max-width: 95%;
+}
+
+
+.hidden-table{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  text-align: center;
+  margin: 2rem auto;
 }
 
 .expence-description label{
@@ -25,7 +37,7 @@ margin-bottom: 1rem;
     text-align: right;
 }
 
-.new-expence button{
+.new-expence__control button{
     font: inherit;
     cursor: pointer;
     padding: 1rem 2rem;
@@ -41,3 +53,4 @@ margin-bottom: 1rem;
     background-color: #510674;
     border-color: #510674;
   }
+

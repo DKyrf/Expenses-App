@@ -3,6 +3,8 @@ import "./ExpenceForm.css"
 
 function ExpenceForm(props){
 
+  const [isHide, setHiddenTable] = useState(false)
+
   const [inputVal, setInputVal] = useState({
     id: "",
     title: "",
@@ -53,13 +55,16 @@ function ExpenceForm(props){
         date: ""
       })
 
-
-
     }
 
+    function hideForm(event){
+      event.preventDefault()
+      setHiddenTable(!isHide)
+    }
 
     return (
         <form onSubmit={submitHandler}>
+          {isHide && (
           <div className="new-expence">
             <div className="expence-description">
               <label>Title:</label>
@@ -96,9 +101,15 @@ function ExpenceForm(props){
             </div>
           </div>
 
-          <div className="new-expence__control">
+          )}
+          {isHide 
+          ? <div className="new-expence__control">
+            <button onClick={hideForm}>Cancel</button>
             <button type="submit">Add expence</button>
           </div>
+          : <div className="new-expence__control hidden">
+            <button onClick={hideForm}>Add one item</button>
+          </div>}
           
         </form>
     )

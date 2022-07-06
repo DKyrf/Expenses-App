@@ -5,6 +5,7 @@ import Card from "../UI/Card"
 import NewExpence from "../NewExpence/NewExpence";
 import { ExpenceFilter } from "./Filter/ExpenceFilter";
 import { ExpencesList } from "./ExpencesList";
+import ExpencesChart from "./ExpenceChart";
 
 
 
@@ -14,8 +15,8 @@ function Expence(props){
   const [year, setfilteredYear] = useState("2022")
 
 
-  function filteredYear(year){
-      setfilteredYear(year);
+  function filteredYear(selectedYear){
+      setfilteredYear(selectedYear);
   }
 
   const filteredExpences = props.items.filter(el => (
@@ -28,6 +29,10 @@ function Expence(props){
           onSavedData = {props.newEntryData}
         />
         <Card className="expance__wrapper">
+
+        <ExpencesChart 
+          chartData = {filteredExpences}
+        />
 
         <ExpenceFilter 
           onChangeFilter={filteredYear}
