@@ -8,8 +8,6 @@ export default function ChartBar(props){
     if(props.max > 0){
         bar = Math.floor((props.value * 100) / props.max) + "%"
     }
-
-    console.log(bar);
     
     return(
         <div className='chart-bar'>

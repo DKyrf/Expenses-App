@@ -39,6 +39,8 @@ function App(props){
             ...prev,
             newData
           ])
+        
+        
       }
 
     return (

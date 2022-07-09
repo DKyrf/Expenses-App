@@ -6,8 +6,6 @@ export default function Chart(props){
 
     const chartValues = props.yearChartData.map(el => el.value);
     const maxValue = Math.max(...chartValues);
-
-    console.log(props.yearChartData);
     
     
     return(

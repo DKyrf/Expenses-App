@@ -42,9 +42,9 @@ function ExpenceForm(props){
       el.preventDefault(); 
 
       const expenceData = {
-        title: inputVal.title,
+        title: inputVal.title.toUpperCase(),
         amount: inputVal.amount,
-        date: new Date(inputVal.date),
+        date: new Date(inputVal.date.split("-").join(", ")),
       };
 
       props.onSendSubmittedData(expenceData);

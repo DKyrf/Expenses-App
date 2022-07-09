@@ -41,16 +41,11 @@ max-width: 95%;
     font: inherit;
     cursor: pointer;
     padding: 1rem 2rem;
-    border: 1px solid #40005d;
-    background-color: #40005d;
+    border: 1px solid #004667;
+    background-color: #0194d8;
     color: white;
     border-radius: 12px;
     margin-right: 1rem;
 }
-  
-  .new-expence button:hover,
-  .new-expence button:active {
-    background-color: #510674;
-    border-color: #510674;
-  }
+
 
